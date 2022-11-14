@@ -16,7 +16,7 @@
 
 [#macro inputDate name label attributes...]
     <label for="${name}" class="form-label">${label}</label>
-    <input type="date" class="form-control ${bindStatus.hasFieldErrors(name)?string('is-invalid', 'is-valid')}" id="${name}" name="${name}" value="${bind[name]?date?iso_local!}" [@attrs attributes /]>
+    <input type="date" class="form-control ${bindStatus.hasFieldErrors(name)?string('is-invalid', 'is-valid')}" id="${name}" name="${name}" value="${(bind[name]?date?iso_local)!}" [@attrs attributes /]>
     [@errors name=name /]
 [/#macro]
 
